@@ -132,6 +132,8 @@ FROM bank_data.bankdata_clean
 GROUP BY job
 ORDER BY conversion_rate DESC;
 ```
+<img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/4c1a3dcd-db9c-4885-a216-5b84c9cf3922" />
+
 ### 3. Conversion by education
 ```sql
 -- sql/conversion_by_education.sql
@@ -144,6 +146,8 @@ FROM bank_data.bankdata_clean
 GROUP BY education
 ORDER BY conversion_rate DESC;
 ```
+<img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/2a5f2689-c5b5-48fc-8986-490ef3be83fe" />
+
 ### 4. Conversion by contact
 ```sql
 -- sql/conversion_by_contact.sql
@@ -156,6 +160,8 @@ FROM bank_data.bankdata_clean
 GROUP BY contact
 ORDER BY conversion_rate DESC;
 ```
+<img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/afeaa1ad-9138-4d5f-849b-0fd160fe6b77" />
+
 ### 5. Conversion by previous outcome (poutcome)
 ```sql
 -- sql/conversion_by_poutcome.sql
@@ -168,6 +174,7 @@ FROM bank_data.bankdata_clean
 GROUP BY poutcome
 ORDER BY conversion_rate DESC;
 ```
+<img width="618" height="379" alt="image" src="https://github.com/user-attachments/assets/cb3a2e58-b748-4633-9f05-a4f2c569cdce" />
 
 ### 6. Conversion by duration groups
 ```sql
@@ -205,7 +212,7 @@ LIMIT 50;
 ```
 
 
-<img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/8ebd266a-f6ba-4413-be17-1a148e5e8866" />
+
 
 
 
