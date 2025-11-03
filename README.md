@@ -121,7 +121,7 @@ SELECT
 FROM bank_data.bankdata_clean;
 ```
 ###2. Conversion by job
-
+```sql
 -- sql/conversion_by_job.sql
 SELECT 
   job,
