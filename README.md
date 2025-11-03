@@ -205,6 +205,7 @@ LIMIT 50;
 ```
 
 
+<img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/8ebd266a-f6ba-4413-be17-1a148e5e8866" />
 
 
 
