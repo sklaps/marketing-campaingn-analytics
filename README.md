@@ -133,7 +133,7 @@ GROUP BY job
 ORDER BY conversion_rate DESC;
 ```
 ### 3. Conversion by education
-```
+````sql
 -- sql/conversion_by_education.sql
 SELECT 
   education,
