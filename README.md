@@ -120,7 +120,7 @@ SELECT
   ROUND(SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate
 FROM bank_data.bankdata_clean;
 ```
-###2. Conversion by job
+### 2. Conversion by job
 ```sql
 -- sql/conversion_by_job.sql
 SELECT 
@@ -131,3 +131,86 @@ SELECT
 FROM bank_data.bankdata_clean
 GROUP BY job
 ORDER BY conversion_rate DESC;
+```
+### 3. Conversion by education
+```
+-- sql/conversion_by_education.sql
+SELECT 
+  education,
+  COUNT(*) AS total_customers,
+  SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) AS converted,
+  ROUND(SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate
+FROM bank_data.bankdata_clean
+GROUP BY education
+ORDER BY conversion_rate DESC;
+```
+### 4. Conversion by contact
+```
+-- sql/conversion_by_contact.sql
+SELECT 
+  contact,
+  COUNT(*) AS total_customers,
+  SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) AS converted,
+  ROUND(SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate
+FROM bank_data.bankdata_clean
+GROUP BY contact
+ORDER BY conversion_rate DESC;
+```
+### 5. Conversion by previous outcome (poutcome)
+```
+-- sql/conversion_by_poutcome.sql
+SELECT 
+  poutcome,
+  COUNT(*) AS total_customers,
+  SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) AS converted,
+  ROUND(SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate
+FROM bank_data.bankdata_clean
+GROUP BY poutcome
+ORDER BY conversion_rate DESC;
+```
+
+### 6. Conversion by duration groups
+```
+-- sql/conversion_by_duration.sql
+SELECT 
+  CASE 
+    WHEN duration < 100 THEN '<100s'
+    WHEN duration BETWEEN 100 AND 300 THEN '100-300s'
+    WHEN duration BETWEEN 301 AND 600 THEN '301-600s'
+    ELSE '>600s'
+  END AS duration_group,
+  COUNT(*) AS total_customers,
+  SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) AS converted,
+  ROUND(SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate
+FROM bank_data.bankdata_clean
+GROUP BY duration_group
+ORDER BY conversion_rate DESC;
+```
+### 7. Top segments view (job + education + contact + poutcome)
+```
+-- sql/top_segments_view.sql
+CREATE OR REPLACE VIEW top_segments AS
+SELECT 
+  job,
+  education,
+  contact,
+  poutcome,
+  COUNT(*) AS total_customers,
+  ROUND(SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate
+FROM bank_data.bankdata_clean
+GROUP BY job, education, contact, poutcome
+HAVING COUNT(*) > 50
+ORDER BY conversion_rate DESC
+LIMIT 50;
+```
+
+
+
+
+
+
+
+
+
+
+
