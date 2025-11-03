@@ -119,7 +119,7 @@ SELECT
   SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) AS total_converted,
   ROUND(SUM(CASE WHEN y = 'yes' THEN 1 ELSE 0 END) * 100.0 / COUNT(*), 2) AS conversion_rate
 FROM bank_data.bankdata_clean;
-
+```
 ###2. Conversion by job
 
 -- sql/conversion_by_job.sql
