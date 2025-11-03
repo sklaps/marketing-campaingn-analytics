@@ -193,6 +193,8 @@ FROM bank_data.bankdata_clean
 GROUP BY duration_group
 ORDER BY conversion_rate DESC;
 ```
+<img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/ac4363a9-466c-461f-8492-8a7a90e9bec0" />
+
 ### 7. Top segments view (job + education + contact + poutcome)
 ```sql
 -- sql/top_segments_view.sql
@@ -210,6 +212,7 @@ HAVING COUNT(*) > 50
 ORDER BY conversion_rate DESC
 LIMIT 50;
 ```
+<img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/17f56677-21a0-42e5-9c05-0079b38dced0" />
 
 
 
