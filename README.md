@@ -157,7 +157,7 @@ GROUP BY contact
 ORDER BY conversion_rate DESC;
 ```
 ### 5. Conversion by previous outcome (poutcome)
-```
+```sql
 -- sql/conversion_by_poutcome.sql
 SELECT 
   poutcome,
@@ -170,7 +170,7 @@ ORDER BY conversion_rate DESC;
 ```
 
 ### 6. Conversion by duration groups
-```
+```sql
 -- sql/conversion_by_duration.sql
 SELECT 
   CASE 
@@ -187,7 +187,7 @@ GROUP BY duration_group
 ORDER BY conversion_rate DESC;
 ```
 ### 7. Top segments view (job + education + contact + poutcome)
-```
+```sql
 -- sql/top_segments_view.sql
 CREATE OR REPLACE VIEW top_segments AS
 SELECT 
