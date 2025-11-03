@@ -109,4 +109,4 @@ The goal is to identify which customer segments and contact strategies yield the
 
 ---
 
-
+## 🧾 SQL Queries 
