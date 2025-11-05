@@ -133,7 +133,10 @@ GROUP BY job
 ORDER BY conversion_rate DESC;
 ```
 <img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/4c1a3dcd-db9c-4885-a216-5b84c9cf3922" />
-
+💡 Insights (By Job Type)
+1.Students (28.7%) and retired clients (22.8%) show the highest response rates.
+2.Blue-collar (7.3%) and entrepreneurs (8.3%) are the least responsive groups
+3.Campaigns perform best with youth and retired audiences, suggesting stronger engagement in these segments.
 ### 3. Conversion by education
 ```sql
 -- sql/conversion_by_education.sql
@@ -147,7 +150,11 @@ GROUP BY education
 ORDER BY conversion_rate DESC;
 ```
 <img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/2a5f2689-c5b5-48fc-8986-490ef3be83fe" />
+💡 Insights (By Education)
 
+1.Tertiary-educated clients (15%) convert best, showing higher financial interest.
+2.Primary-educated clients (8.6%) have the lowest response rate.
+3.Campaigns are more effective among educated and informed audiences.
 ### 4. Conversion by contact
 ```sql
 -- sql/conversion_by_contact.sql
@@ -161,7 +168,11 @@ GROUP BY contact
 ORDER BY conversion_rate DESC;
 ```
 <img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/afeaa1ad-9138-4d5f-849b-0fd160fe6b77" />
+💡 Insights (By Contact & Outcome)
 
+1.Telephone + success (65.8%) and cellular + success (65%) deliver the best results.
+2.Unknown channels (4–18%) show very weak performance.
+3.Prior successful contacts strongly boost future conversion chances.
 ### 5. Conversion by previous outcome (poutcome)
 ```sql
 -- sql/conversion_by_poutcome.sql
@@ -175,7 +186,10 @@ GROUP BY poutcome
 ORDER BY conversion_rate DESC;
 ```
 <img width="618" height="379" alt="image" src="https://github.com/user-attachments/assets/cb3a2e58-b748-4633-9f05-a4f2c569cdce" />
-
+💡 Insights (By Previous Outcome)
+1.Clients with past success (64.7%) are highly likely to convert again.
+2.Unknown outcomes (9.2%) and failures (12.6%) perform poorly.
+3.Re-targeting successful past clients is the most effective strategy.
 ### 6. Conversion by duration groups
 ```sql
 -- sql/conversion_by_duration.sql
@@ -194,7 +208,11 @@ GROUP BY duration_group
 ORDER BY conversion_rate DESC;
 ```
 <img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/ac4363a9-466c-461f-8492-8a7a90e9bec0" />
+💡 Insights (By Call Duration)
 
+1.Calls longer than 600s (48.4%) have the highest success rate.
+2.Short calls (<100s) rarely convert (only 1% success).
+3.Longer, engaging conversations strongly improve conversion outcomes.
 ### 7. Top segments view (job + education + contact + poutcome)
 ```sql
 -- sql/top_segments_view.sql
@@ -213,7 +231,10 @@ ORDER BY conversion_rate DESC
 LIMIT 50;
 ```
 <img width="752" height="452" alt="image" src="https://github.com/user-attachments/assets/17f56677-21a0-42e5-9c05-0079b38dced0" />
-
+💡 Insights (Top Performing Segments)
+1.Retired and service workers with secondary education contacted via cellular + success history convert the most (70–76%).
+2.Management + tertiary + cellular + success also performs strongly (≈70%).
+3.Ideal targets are educated, reachable clients with positive past outcomes.
 
 
 
